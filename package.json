@@ -1,0 +1,20 @@
+{
+  "name": "torneio-ds3-backend",
+  "version": "1.0.0",
+  "description": "Backend do Torneio DS3 com Firebase",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.22.1",
+    "firebase-admin": "^11.11.1",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
