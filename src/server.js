@@ -85,14 +85,12 @@ app.post('/api/times', (req, res) => {
   
   try {
     jwt.verify(token, SECRET);
-    const { nome, sigla, cidade, tecnico } = req.body;
+    const { nome, sigla } = req.body;
     
     const novoTime = {
       id: bancoDeDados.proximoId++,
       nome,
       sigla: sigla.toUpperCase(),
-      cidade: cidade || '',
-      tecnico: tecnico || '',
       status: 'ativo',
       jogadores: [],
       criadoEm: new Date().toISOString()
@@ -438,6 +436,7 @@ app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
   console.log(`👤 Admin: ${ADMIN_FIXO.usuario} / ${ADMIN_FIXO.senha}`);
   console.log(`📊 Rankings compartilhados - TODO MUNDO VÊ OS MESMOS DADOS!`);
+  console.log(`✅ Times: apenas nome e sala`);
   console.log(`✅ Rotas de ranking: artilheiros, melhores-jogadores, melhores-goleiros`);
   console.log(`✅ Rotas de partidas: GET, POST, PUT, DELETE`);
 });
